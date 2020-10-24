@@ -1,0 +1,5 @@
+Added Component: Designator=SC7(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VCC Pin=SC7-1
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC7 Spring Contact
+Added Room: Name=Hilt-Side Schematic

@@ -1,0 +1,89 @@
+Added Component: Designator=P1(Wire Mount)
+Add component. Clean all parameters for all variants
+Added Component: Designator=P2(Wire Mount)
+Add component. Clean all parameters for all variants
+Added Component: Designator=P3(Wire Mount)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC1(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC2(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC3(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC4(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC5(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC6(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC7(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC8(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC9(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC10(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC11(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC12(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC13(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC14(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC15(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC16(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC17(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC18(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC19(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=P1-1
+Added Pin To Net: NetName=DATA Pin=P2-1
+Added Pin To Net: NetName=VCC Pin=P3-1
+Added Pin To Net: NetName=DATA Pin=SC1-1
+Added Pin To Net: NetName=GND Pin=SC2-1
+Added Pin To Net: NetName=VCC Pin=SC3-1
+Added Pin To Net: NetName=GND Pin=SC4-1
+Added Pin To Net: NetName=VCC Pin=SC5-1
+Added Pin To Net: NetName=GND Pin=SC6-1
+Added Pin To Net: NetName=VCC Pin=SC7-1
+Added Pin To Net: NetName=GND Pin=SC8-1
+Added Pin To Net: NetName=VCC Pin=SC9-1
+Added Pin To Net: NetName=GND Pin=SC10-1
+Added Pin To Net: NetName=VCC Pin=SC11-1
+Added Pin To Net: NetName=GND Pin=SC12-1
+Added Pin To Net: NetName=VCC Pin=SC13-1
+Added Pin To Net: NetName=GND Pin=SC14-1
+Added Pin To Net: NetName=VCC Pin=SC15-1
+Added Pin To Net: NetName=GND Pin=SC16-1
+Added Pin To Net: NetName=VCC Pin=SC17-1
+Added Pin To Net: NetName=GND Pin=SC18-1
+Added Pin To Net: NetName=VCC Pin=SC19-1
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component P1 Wire Mount
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component P2 Wire Mount
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component P3 Wire Mount
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC1 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC2 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC3 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC4 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC5 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC6 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC7 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC8 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC9 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC10 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC11 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC12 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC13 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC14 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC15 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC16 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC17 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC18 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC19 Spring Contact
+Added Room: Name=Hilt-Side Schematic

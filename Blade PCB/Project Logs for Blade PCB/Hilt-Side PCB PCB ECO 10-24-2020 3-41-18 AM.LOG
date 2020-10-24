@@ -1,0 +1,37 @@
+Added Component: Designator=SC3(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC5(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC7(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC9(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC11(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC13(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC15(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC17(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SC19(Spring Contact)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VCC Pin=SC3-1
+Added Pin To Net: NetName=VCC Pin=SC5-1
+Added Pin To Net: NetName=VCC Pin=SC7-1
+Added Pin To Net: NetName=VCC Pin=SC9-1
+Added Pin To Net: NetName=VCC Pin=SC11-1
+Added Pin To Net: NetName=VCC Pin=SC13-1
+Added Pin To Net: NetName=VCC Pin=SC15-1
+Added Pin To Net: NetName=VCC Pin=SC17-1
+Added Pin To Net: NetName=VCC Pin=SC19-1
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC3 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC5 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC7 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC9 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC11 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC13 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC15 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC17 Spring Contact
+Added Member To Class: ClassName=Hilt-Side Schematic Member=Component SC19 Spring Contact
+Added Room: Name=Hilt-Side Schematic
