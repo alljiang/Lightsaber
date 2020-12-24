@@ -1,0 +1,46 @@
+Removed Member From Class: ClassName=Peripherals Member=C0
+Removed Member From Class: ClassName=Peripherals Member=C1
+Removed Member From Class: ClassName=Power Member=C1
+Removed Member From Class: ClassName=Peripherals Member=C2
+Removed Member From Class: ClassName=Peripherals Member=C5
+Removed Member From Class: ClassName=Peripherals Member=C7
+Removed Member From Class: ClassName=Peripherals Member=C8
+Removed Member From Class: ClassName=Peripherals Member=C10
+Removed Member From Class: ClassName=Power Member=C10
+Removed Member From Class: ClassName=Peripherals Member=C11
+Removed Member From Class: ClassName=Microcontroller Member=C12
+Removed Member From Class: ClassName=Peripherals Member=C12
+Removed Member From Class: ClassName=Microcontroller Member=C13
+Removed Member From Class: ClassName=Microcontroller Member=C14
+Removed Member From Class: ClassName=Peripherals Member=C14
+Removed Member From Class: ClassName=Microcontroller Member=C15
+Removed Member From Class: ClassName=Microcontroller Member=C16
+Removed Member From Class: ClassName=Peripherals Member=C16
+Removed Member From Class: ClassName=Microcontroller Member=C17
+Removed Member From Class: ClassName=Microcontroller Member=C18
+Removed Member From Class: ClassName=Microcontroller Member=C19
+Removed Member From Class: ClassName=Peripherals Member=C19
+Removed Member From Class: ClassName=Microcontroller Member=C20
+Removed Member From Class: ClassName=Microcontroller Member=C21
+Removed Member From Class: ClassName=Microcontroller Member=C22
+Removed Member From Class: ClassName=Microcontroller Member=C23
+Removed Member From Class: ClassName=Microcontroller Member=C24
+Removed Member From Class: ClassName=Microcontroller Member=C25
+Removed Member From Class: ClassName=Microcontroller Member=C26
+Removed Member From Class: ClassName=Microcontroller Member=C27
+Removed Member From Class: ClassName=Microcontroller Member=C28
+Removed Member From Class: ClassName=Microcontroller Member=C29
+Removed Member From Class: ClassName=Microcontroller Member=C30
+Removed Member From Class: ClassName=Power Member=R0
+Removed Member From Class: ClassName=Power Member=R1
+Removed Member From Class: ClassName=Power Member=R2
+Removed Member From Class: ClassName=Power Member=R16
+Removed Member From Class: ClassName=Power Member=R17
+Removed Member From Class: ClassName=Power Member=R18
+Removed Member From Class: ClassName=Power Member=R19
+Removed Member From Class: ClassName=Power Member=R20
+Removed Member From Class: ClassName=Power Member=R21
+Removed Member From Class: ClassName=Power Member=U3
+Added Member To Class: ClassName=Microcontroller Member=Component C1 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component Q0 SSM3J328R,LF
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

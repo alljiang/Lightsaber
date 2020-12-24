@@ -1,0 +1,27 @@
+Change Component Parameter Comment in R12 Old= New=Resistor, 0402
+Change Component Parameter Comment in R13 Old= New=Resistor, 0402
+Change Component Parameter Comment in R14 Old= New=Resistor, 0402
+Change Component Parameter Comment in R15 Old= New=Resistor, 0402
+Replace Symbol from D0 PMEG3050EP,115 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with PMEG3050EP,115 from Lightsaber.IntLib
+Replace Symbol from P0 21700 Battery Pad in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with 21700 Battery Pad from Lightsaber.IntLib
+Replace Symbol from P1 21700 Battery Pad in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with 21700 Battery Pad from Lightsaber.IntLib
+Replace Symbol from Q1 L2N7002SWT1G in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with L2N7002SWT1G from Lightsaber.IntLib
+Replace Symbol from Q3 SSM3J328R,LF in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with SSM3J328R,LF from Lightsaber.IntLib
+Replace Symbol from R3 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R4 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R5 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R6 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R7 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R8 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R9 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R10 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R11 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R12 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R13 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R14 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from R15 Resistor, 0402 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with Resistor, 0402 from Lightsaber.IntLib
+Replace Symbol from U1 XB9241A in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with XB9241A from Lightsaber.IntLib
+Replace Symbol from U2 XB6206AE in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with XB6206AE from Lightsaber.IntLib
+Replace Symbol from U4 BL4054B-42TPTRN in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with BL4054B-42TPTRN from Lightsaber.IntLib
+Replace Symbol from Z0 BZT52C4V7 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with BZT52C4V7 from Lightsaber.IntLib
+Replace Symbol from Z1 MM1W3V3 in C:\Users\Allen\Documents\GitHub\Lightsaber\Main PCB\Power.SchDoc with MM1W3V3 from Lightsaber.IntLib

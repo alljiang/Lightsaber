@@ -1,0 +1,53 @@
+Added Member To Class: ClassName=Microcontroller Member=Component C? 10pF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 10pF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 2.2uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 10uF 0402, Place in center of TM4C
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C? 107CKS035M
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 10uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 1000uF, 8x10.5mm
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 68nF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 10uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C? 10uF 0402
+Added Member To Class: ClassName=Power Member=Component D? ESD56151W04-2/TR
+Added Member To Class: ClassName=Microcontroller Member=Component IC? TM4C123GH6PMI7
+Added Member To Class: ClassName=Peripherals Member=Component IC? MPU-6500
+Added Member To Class: ClassName=Peripherals Member=Component IC? SN74LVC3G17DCUR
+Added Member To Class: ClassName=Peripherals Member=Component J? MCP4821-E/SN
+Added Member To Class: ClassName=Peripherals Member=Component J? TF_PUSH
+Added Member To Class: ClassName=Power Member=Component P? 21700 Battery Pad
+Added Member To Class: ClassName=Power Member=Component Q? L2N7002SWT1G
+Added Member To Class: ClassName=Microcontroller Member=Component R? 10kO, 0402
+Added Member To Class: ClassName=Microcontroller Member=Component R? 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R? 470O, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R? 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R? 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R? 475kO, 0402
+Added Member To Class: ClassName=Power Member=Component R? 100O, 0402
+Added Member To Class: ClassName=Power Member=Component R? 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component R? 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R? 470O, 0402
+Added Member To Class: ClassName=Power Member=Component R? Resistor, 0402
+Added Member To Class: ClassName=Power Member=Component R? Resistor, 0402
+Added Member To Class: ClassName=Power Member=Component R? 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component U? LD39200PU33R
+Added Member To Class: ClassName=Power Member=Component U? XB9241A
+Added Member To Class: ClassName=Microcontroller Member=Component Y? NX3225GB-16M-STD-CRA-2

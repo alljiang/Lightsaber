@@ -1,0 +1,94 @@
+Removed Pin From Net: NetName=GND Pin=U1-EPAD
+Change Component Comment : Designator=R15 Old Comment=1.25kO, 0402 New Comment=Resistor, 0402
+Change Component Comment : Designator=R14 Old Comment=1O, 0402 New Comment=Resistor, 0402
+Change Component Comment : Designator=R12 Old Comment=2kO, 0402 New Comment=Resistor, 0402
+Change Component Comment : Designator=R13 Old Comment=800kO, 0402 New Comment=Resistor, 0402
+Change Component Designator: OldDesignator=C1 NewDesignator=C31
+Change Component Designator: OldDesignator=P0 NewDesignator=P2
+Change Component Designator: OldDesignator=Q0 NewDesignator=Q3
+Change Component Designator: OldDesignator=U2 NewDesignator=U4
+Added Component: Designator=SW0(TS24CA)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=R15-2
+Added Pin To Net: NetName=GND Pin=SW0-1
+Added Pin To Net: NetName=GND Pin=SW0-2
+Added Pin To Net: NetName=~RST Pin=SW0-3
+Added Pin To Net: NetName=GND Pin=SW0-4
+Change Net Name : Old Net Name=NetP0_D New Net Name=NetP2_D
+Added Member To Class: ClassName=Microcontroller Member=Component C0 10pF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C1 10pF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C2 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C3 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C4 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C5 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C6 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C7 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C8 2.2uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C9 1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C10 0.1uF 0402
+Added Member To Class: ClassName=Microcontroller Member=Component C11 10uF 0402, Place in center of TM4C
+Added Member To Class: ClassName=Power Member=Component C12 10uF 0402
+Added Member To Class: ClassName=Power Member=Component C13 10uF 0402
+Added Member To Class: ClassName=Power Member=Component C14 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C15 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C16 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C17 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C18 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component C19 10uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C20 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C21 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C22 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C23 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C24 10uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C25 68nF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C26 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C27 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C28 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C29 0.1uF 0402
+Added Member To Class: ClassName=Peripherals Member=Component C30 1000uF
+Added Member To Class: ClassName=Microcontroller Member=Component C31 0.1uF 0402
+Added Member To Class: ClassName=Power Member=Component D0 PMEG3050EP,115
+Added Member To Class: ClassName=Microcontroller Member=Component IC0 TM4C123GH6PMI7
+Added Member To Class: ClassName=Peripherals Member=Component IC1 ESP-01
+Added Member To Class: ClassName=Peripherals Member=Component IC2 MPU-6500
+Added Member To Class: ClassName=Peripherals Member=Component IC3 SN74LVC3G17DCUR
+Added Member To Class: ClassName=Peripherals Member=Component J0 TF_PUSH
+Added Member To Class: ClassName=Peripherals Member=Component J1 MCP4821-E/SN
+Added Member To Class: ClassName=Peripherals Member=Component J2 B-3000N06P-0110
+Added Member To Class: ClassName=Power Member=Component P0 21700 Battery Pad
+Added Member To Class: ClassName=Power Member=Component P1 21700 Battery Pad
+Added Member To Class: ClassName=Peripherals Member=Component P2 Neopixel
+Added Member To Class: ClassName=Power Member=Component Q0 AONR21357
+Added Member To Class: ClassName=Power Member=Component Q1 L2N7002SWT1G
+Added Member To Class: ClassName=Power Member=Component Q3 SSM3J328R,LF
+Added Member To Class: ClassName=Microcontroller Member=Component R0 10kO, 0402
+Added Member To Class: ClassName=Microcontroller Member=Component R1 10kO, 0402
+Added Member To Class: ClassName=Microcontroller Member=Component R2 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R3 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R4 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R5 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R6 470O, 0402
+Added Member To Class: ClassName=Power Member=Component R7 100O, 0402
+Added Member To Class: ClassName=Power Member=Component R8 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R9 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component R10 10kO, 0402
+Added Member To Class: ClassName=Power Member=Component R11 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component R12 Resistor, 0402
+Added Member To Class: ClassName=Power Member=Component R13 Resistor, 0402
+Added Member To Class: ClassName=Power Member=Component R14 Resistor, 0402
+Added Member To Class: ClassName=Power Member=Component R15 Resistor, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R16 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R17 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R18 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R19 475kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R20 10kO, 0402
+Added Member To Class: ClassName=Peripherals Member=Component R21 470O, 0402
+Added Member To Class: ClassName=Microcontroller Member=Component SW0 TS24CA
+Added Member To Class: ClassName=Power Member=Component U0 LD39200PU33R
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE
+Added Member To Class: ClassName=Peripherals Member=Component U3 LY8006ULT
+Added Member To Class: ClassName=Power Member=Component U4 BL4054B-42TPTRN
+Added Member To Class: ClassName=Microcontroller Member=Component Y0 NX3225GB-16M-STD-CRA-2
+Added Member To Class: ClassName=Power Member=Component Z0 BZT52C4V7
+Added Member To Class: ClassName=Power Member=Component Z1 MM1W3V3

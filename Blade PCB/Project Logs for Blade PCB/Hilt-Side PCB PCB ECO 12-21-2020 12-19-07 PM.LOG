@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=VCC Pin=SC13-1
+Removed Pin From Net: NetName=VCC Pin=SC15-1
+Removed Pin From Net: NetName=VCC Pin=SC17-1
+Removed Pin From Net: NetName=VCC Pin=SC19-1
+Removed Member From Class: ClassName=Hilt-Side Schematic Member=SC13
+Removed Member From Class: ClassName=Hilt-Side Schematic Member=SC15
+Removed Member From Class: ClassName=Hilt-Side Schematic Member=SC17
+Removed Member From Class: ClassName=Hilt-Side Schematic Member=SC19
+Added Room: Name=Hilt-Side Schematic
