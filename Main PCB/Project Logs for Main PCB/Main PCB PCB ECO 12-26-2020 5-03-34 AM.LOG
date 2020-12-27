@@ -1,0 +1,6 @@
+Added Component: Designator=S0(SPEAKER PADS)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetS0_+ Pin=S0-+
+Added Pin To Net: NetName=NetS0_- Pin=S0--
+Added Member To Class: ClassName=Peripherals Member=Component J2 PZ200V-12-06P
+Added Member To Class: ClassName=Peripherals Member=Component S0 Speaker

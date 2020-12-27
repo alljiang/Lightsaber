@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetIC3_5 Pin=J2-2
+Removed Pin From Net: NetName=NetIC3_7 Pin=J2-3
+Removed Member From Class: ClassName=Power Member=J4
+Added Pin To Net: NetName=NetIC3_7 Pin=J2-2
+Added Pin To Net: NetName=NetIC3_5 Pin=J2-3
+Added Member To Class: ClassName=Power Member=Component J3 TYPE-C-31-M-17

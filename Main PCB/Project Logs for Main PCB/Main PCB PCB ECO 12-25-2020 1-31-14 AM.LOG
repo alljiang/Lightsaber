@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=IC1 Old Footprint=ESP01 New Footprint=ESP-01
+Added Member To Class: ClassName=Peripherals Member=Component IC1 ESP-01S

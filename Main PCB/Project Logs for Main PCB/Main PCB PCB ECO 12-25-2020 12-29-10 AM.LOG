@@ -1,0 +1,7 @@
+Removed Member From Class: ClassName=Power Member=P2
+Added Pin To Net: NetName=GND Pin=U1-EPAD
+Added Member To Class: ClassName=Microcontroller Member=Component C1 10pF 0402
+Added Member To Class: ClassName=Power Member=Component P0 21700 Battery Pad
+Added Member To Class: ClassName=Power Member=Component Q0 AONR21357
+Added Member To Class: ClassName=Power Member=Component R? 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

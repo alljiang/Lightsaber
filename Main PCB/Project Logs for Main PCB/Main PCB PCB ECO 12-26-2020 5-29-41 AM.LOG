@@ -1,0 +1,19 @@
+Added Component: Designator=U1(DFN4x4x0.55-12FC)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=Bat- Pin=U1-1
+Added Pin To Net: NetName=Bat- Pin=U1-2
+Added Pin To Net: NetName=Bat VDD Pin=U1-3
+Added Pin To Net: NetName=Bat- Pin=U1-4
+Added Pin To Net: NetName=Bat- Pin=U1-5
+Added Pin To Net: NetName=Bat VDD Pin=U1-6
+Added Pin To Net: NetName=Bat- Pin=U1-7
+Added Pin To Net: NetName=Bat- Pin=U1-8
+Added Pin To Net: NetName=Bat VDD Pin=U1-9
+Added Pin To Net: NetName=Bat- Pin=U1-10
+Added Pin To Net: NetName=Bat- Pin=U1-11
+Added Pin To Net: NetName=Bat VDD Pin=U1-12
+Added Pin To Net: NetName=GND Pin=U1-EPAD
+Added Member To Class: ClassName=Peripherals Member=Component J2 PZ200V-12-06P
+Added Member To Class: ClassName=Peripherals Member=Component S0 Speaker
+Added Member To Class: ClassName=Microcontroller Member=Component SW0 TS24CA
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A

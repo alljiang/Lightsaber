@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Added Member To Class: ClassName=Microcontroller Member=Component IC0 TM4C123GH6PMI7
+Added Member To Class: ClassName=Peripherals Member=Component IC2 MPU-6500
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

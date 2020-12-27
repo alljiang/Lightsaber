@@ -1,0 +1,9 @@
+Added Component: Designator=SW0(TS24CA)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=SW0-1
+Added Pin To Net: NetName=GND Pin=SW0-2
+Added Pin To Net: NetName=~RST Pin=SW0-3
+Added Pin To Net: NetName=GND Pin=SW0-4
+Added Member To Class: ClassName=Peripherals Member=Component J2 PZ200V-12-06P
+Added Member To Class: ClassName=Peripherals Member=Component S0 Speaker
+Added Member To Class: ClassName=Microcontroller Member=Component SW0 TS24CA

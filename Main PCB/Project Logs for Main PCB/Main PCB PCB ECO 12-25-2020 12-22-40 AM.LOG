@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=+3.3V Pin=U0-5
+Removed Member From Class: ClassName=Power Member=P2
+Change Component Comment : Designator=R15 Old Comment=Resistor, 0402 New Comment=1.25kO, 0402
+Change Component Comment : Designator=R14 Old Comment=Resistor, 0402 New Comment=1O, 0402
+Change Component Comment : Designator=R12 Old Comment=Resistor, 0402 New Comment=2kO, 0402
+Change Component Comment : Designator=R13 Old Comment=Resistor, 0402 New Comment=800kO, 0402
+Added Component: Designator=J?(TYPEC31M17)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheet.lcsc.com/szlcsc/1903211732_Korean-Hroparts-Elec-TYPE-C-31-M-17_C283540.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "3.26mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Korean Hroparts Elec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TYPE-C-31-M-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R?(0402)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R?(0402)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=+5V Pin=J?-A9
+Added Pin To Net: NetName=GND Pin=J?-A12
+Added Pin To Net: NetName=+5V Pin=J?-B9
+Added Pin To Net: NetName=GND Pin=J?-B12
+Added Pin To Net: NetName=GND Pin=J?-MH1
+Added Pin To Net: NetName=GND Pin=J?-MH2
+Added Pin To Net: NetName=GND Pin=J?-MH3
+Added Pin To Net: NetName=GND Pin=J?-MH4
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=NetC12_2 Pin=U0-5
+Added Pin To Net: NetName=NetJ?_A5 Pin=J?-A5
+Added Pin To Net: NetName=NetJ?_A5 Pin=R?-1
+Added Net: Name=NetJ?_A5
+Added Pin To Net: NetName=NetJ?_B5 Pin=J?-B5
+Added Pin To Net: NetName=NetJ?_B5 Pin=R?-2
+Added Net: Name=NetJ?_B5
+Added Member To Class: ClassName=Microcontroller Member=Component C1 10pF 0402
+Added Member To Class: ClassName=Power Member=Component J? TYPE-C-31-M-17
+Added Member To Class: ClassName=Power Member=Component P0 21700 Battery Pad
+Added Member To Class: ClassName=Power Member=Component Q0 AONR21357
+Added Member To Class: ClassName=Power Member=Component R? 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component R? 1kO, 0402
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

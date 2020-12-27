@@ -1,0 +1,3 @@
+Removed Member From Class: ClassName=Microcontroller Member=J3
+Change Component Designator: OldDesignator=J3 NewDesignator=J4
+Added Member To Class: ClassName=Microcontroller Member=Component J4 0.1" 1x5 Pins

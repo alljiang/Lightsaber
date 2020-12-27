@@ -1,0 +1,17 @@
+Added Component: Designator=J2(2mm 2x3 Header TH)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "54202-G08-03"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/54202-g08-03/amphenol-fci"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/54202.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "9.85mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Amphenol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "54202-G08-03"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "649-54202-G08-03"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/54202-G08-03?qs=GN3JspNYOhaVPFh0SDYuCQ%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetIC3_7 Pin=J2-1
+Added Pin To Net: NetName=NetIC3_5 Pin=J2-2
+Added Pin To Net: NetName=NetIC3_2 Pin=J2-3
+Added Pin To Net: NetName=Button N/O B Pin=J2-4
+Added Pin To Net: NetName=Button N/O A Pin=J2-5
+Added Pin To Net: NetName=GND Pin=J2-6
+Added Member To Class: ClassName=Peripherals Member=Component J2 PZ200V-12-06P

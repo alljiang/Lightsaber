@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=ESP_IO0 Pin=IC0-29
+Added Pin To Net: NetName=Power ON Pin=IC0-17
+Added Pin To Net: NetName=ESP_IO0 Pin=IC0-18
+Added Pin To Net: NetName=GND Pin=IC0-34
+Added Pin To Net: NetName=GND Pin=IC0-35
+Added Pin To Net: NetName=LED B Pin=IC0-43
+Added Pin To Net: NetName=LED G Pin=IC0-44
+Added Pin To Net: NetName=LED R Pin=IC0-45
+Added Pin To Net: NetName=CS DAC Pin=IC0-59

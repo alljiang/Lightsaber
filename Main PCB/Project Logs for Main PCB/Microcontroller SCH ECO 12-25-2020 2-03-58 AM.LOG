@@ -1,0 +1,2 @@
+Remove Pin=IC2-23 From Net=SCL
+Remove Pin=IC2-24 From Net=SDA

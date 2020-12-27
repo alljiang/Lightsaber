@@ -1,0 +1,21 @@
+Added Pin To Net: NetName=Vsense Pin=IC0-8
+Added Pin To Net: NetName=Button N/O B Pin=IC0-9
+Added Pin To Net: NetName=Charge Bias Pin=IC0-10
+Added Pin To Net: NetName=~Charging Pin=IC0-13
+Added Pin To Net: NetName=ESP_RST Pin=IC0-14
+Added Pin To Net: NetName=ESP_RX Pin=IC0-15
+Added Pin To Net: NetName=ESP_TX Pin=IC0-16
+Added Pin To Net: NetName=SCK Pin=IC0-19
+Added Pin To Net: NetName=CS SD Pin=IC0-20
+Added Pin To Net: NetName=MISO Pin=IC0-21
+Added Pin To Net: NetName=MOSI Pin=IC0-22
+Added Pin To Net: NetName=SCL Pin=IC0-23
+Added Pin To Net: NetName=SDA Pin=IC0-24
+Added Pin To Net: NetName=Neopixel Data Pin=IC0-28
+Added Pin To Net: NetName=ESP_IO0 Pin=IC0-29
+Added Pin To Net: NetName=ESP_IO2 Pin=IC0-30
+Added Pin To Net: NetName=ESP_EN Pin=IC0-31
+Added Member To Class: ClassName=Peripherals Member=Component J2 PZ200V-12-06P
+Added Member To Class: ClassName=Peripherals Member=Component S0 Speaker
+Added Member To Class: ClassName=Microcontroller Member=Component SW0 TS24CA
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A

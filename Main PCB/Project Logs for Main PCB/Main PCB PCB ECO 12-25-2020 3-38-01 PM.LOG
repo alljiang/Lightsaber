@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=GND Pin=C14-2
+Removed Pin From Net: NetName=CS DAC Pin=C20-1
+Removed Pin From Net: NetName=GND Pin=C20-2
+Removed Pin From Net: NetName=SCK Pin=C21-1
+Removed Pin From Net: NetName=GND Pin=C21-2
+Removed Pin From Net: NetName=MOSI Pin=C22-1
+Removed Pin From Net: NetName=GND Pin=C22-2
+Removed Pin From Net: NetName=+5V Pin=R14-2
+Removed Member From Class: ClassName=Peripherals Member=C21
+Removed Member From Class: ClassName=Peripherals Member=C22
+Removed Member From Class: ClassName=Power Member=R14
+Change Component Comment : Designator=C26 Old Comment=0.1uF 0402 New Comment=1uF 0402
+Change Component Comment : Designator=C20 Old Comment=0.1uF 0402 New Comment=10uF 0402
+Added Pin To Net: NetName=Bat- Pin=C14-2
+Added Pin To Net: NetName=+5V Pin=C19-1
+Added Pin To Net: NetName=GND Pin=C20-1
+Added Pin To Net: NetName=+3.3V Pin=C20-2
+Added Member To Class: ClassName=Microcontroller Member=Component IC0 TM4C123GH6PMI7
+Added Member To Class: ClassName=Peripherals Member=Component IC2 MPU-6500
+Added Member To Class: ClassName=Microcontroller Member=Component SW0 TS24CA
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

@@ -1,0 +1,58 @@
+Added Component: Designator=IC0(QFP50P1200X1200X160-64N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "TM4C123GH6PMI7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/tm4c123gh6pmi7/texas-instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.ti.com/lit/gpn/tm4c123gh6pm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TM4C123GH6PMI7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "595-TM4C123GH6PMI7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TM4C123GH6PMI7?qs=m%2F7bTylgptcEEuXHNU46tA%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=J?(HDRV5W64P0X254_1X5_1270X254X610P)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://docs-emea.rs-online.com/webdocs/0da6/0900766b80da602d.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "6.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Harwin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "M20-9990546"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "855-M20-9990546"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Harwin/M20-9990546?qs=ulE8k0yEMYY8EKyDN9ic6A%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC8_2 Pin=C3-1
+Added Pin To Net: NetName=+3.3V Pin=IC0-2
+Added Pin To Net: NetName=GND Pin=IC0-3
+Added Pin To Net: NetName=+3.3V Pin=IC0-11
+Added Pin To Net: NetName=GND Pin=IC0-12
+Added Pin To Net: NetName=NetC8_2 Pin=IC0-25
+Added Pin To Net: NetName=+3.3V Pin=IC0-26
+Added Pin To Net: NetName=GND Pin=IC0-27
+Added Pin To Net: NetName=NetIC0_32 Pin=IC0-32
+Added Pin To Net: NetName=NetIC0_33 Pin=IC0-33
+Added Pin To Net: NetName=+3.3V Pin=IC0-37
+Added Pin To Net: NetName=~RST Pin=IC0-38
+Added Pin To Net: NetName=GND Pin=IC0-39
+Added Pin To Net: NetName=NetC1_2 Pin=IC0-40
+Added Pin To Net: NetName=NetC0_1 Pin=IC0-41
+Added Pin To Net: NetName=+3.3V Pin=IC0-42
+Added Pin To Net: NetName=+3.3V Pin=IC0-54
+Added Pin To Net: NetName=GND Pin=IC0-55
+Added Pin To Net: NetName=NetC8_2 Pin=IC0-56
+Added Pin To Net: NetName=GND Pin=J?-5
+Change Net Name : Old Net Name=NetC8_2 New Net Name=VDDC
+Added Pin To Net: NetName=TCK Pin=IC0-52
+Added Pin To Net: NetName=TCK Pin=J?-4
+Added Net: Name=TCK
+Added Pin To Net: NetName=TDI Pin=IC0-50
+Added Pin To Net: NetName=TDI Pin=J?-2
+Added Net: Name=TDI
+Added Pin To Net: NetName=TDO Pin=IC0-49
+Added Pin To Net: NetName=TDO Pin=J?-1
+Added Net: Name=TDO
+Added Pin To Net: NetName=TMS Pin=IC0-51
+Added Pin To Net: NetName=TMS Pin=J?-3
+Added Net: Name=TMS
+Added Member To Class: ClassName=Microcontroller Member=Component IC0 TM4C123GH6PMI7
+Added Member To Class: ClassName=Peripherals Member=Component IC2 MPU-6500
+Added Member To Class: ClassName=Microcontroller Member=Component J? 0.1" 1x5 Pins
+Added Member To Class: ClassName=Power Member=Component U1 XB9241A
+Added Member To Class: ClassName=Power Member=Component U2 XB6206AE

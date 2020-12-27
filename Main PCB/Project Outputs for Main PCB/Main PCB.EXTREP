@@ -1,0 +1,25 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: Main PCB.GBR   12/25/2020  11:36:50 PM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                Top Layer                               
+.G2                 Mid Layer 2                             
+.G1                 Mid Layer 1                             
+.GBL                Bottom Layer                            
+.GPT                Top Pad Master                          
+.GPB                Bottom Pad Master                       
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GKO                Keep-Out Layer                          
+.GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
+.GM15               Mechanical 15                           
+.GM13               Mechanical 13                           
+------------------------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=SCL Pin=IC2-23
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=IC2-24
+Added Net: Name=SDA

@@ -1,0 +1,20 @@
+Added Component: Designator=IC2(QFN-24)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "MPU-6500"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/mpu-6500/invensense"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.invensense.com/wp-content/uploads/2015/02/MPU-6500-Datasheet2.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.95mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TDK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "MPU-6500"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "410-MPU-6500"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3.3V Pin=IC2-8
+Added Pin To Net: NetName=GND Pin=IC2-9
+Added Pin To Net: NetName=NetC28_1 Pin=IC2-10
+Added Pin To Net: NetName=GND Pin=IC2-11
+Added Pin To Net: NetName=+3.3V Pin=IC2-13
+Added Pin To Net: NetName=GND Pin=IC2-18
+Added Pin To Net: NetName=GND Pin=IC2-20
+Added Pin To Net: NetName=+3.3V Pin=IC2-22
+Added Pin To Net: NetName=GND Pin=IC2-25
+Added Member To Class: ClassName=Peripherals Member=Component IC2 MPU-6500
