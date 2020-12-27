@@ -1,0 +1,14 @@
+Added Component: Designator=+(Wire Mount)
+Added Component: Designator=-(Wire Mount)
+Added Component: Designator=D(Wire Mount)
+Added Component: Designator=R0(0402)
+Added Pin To Net: NetName=VCC Pin=+-1
+Added Pin To Net: NetName=GND Pin=--1
+Added Pin To Net: NetName=NetD_1 Pin=D-1
+Added Pin To Net: NetName=NetD_1 Pin=R0-1
+Added Pin To Net: NetName=DATA Pin=R0-2
+Added Member To Class: ClassName=Blade-Side Schematic Member=Component + Wire Mount
+Added Member To Class: ClassName=Blade-Side Schematic Member=Component - Wire Mount
+Added Member To Class: ClassName=Blade-Side Schematic Member=Component D Wire Mount
+Added Member To Class: ClassName=Blade-Side Schematic Member=Component R0 470O, 0402
+Added Room: Name=Blade-Side Schematic

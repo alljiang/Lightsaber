@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=GND Pin=P1-1
+Removed Pin From Net: NetName=DATA Pin=P2-1
+Removed Pin From Net: NetName=VCC Pin=P3-1
+Removed Pin From Net: NetName=DATA Pin=SC1-1
+Removed Pin From Net: NetName=GND Pin=SC2-1
+Removed Pin From Net: NetName=VCC Pin=SC3-1
+Removed Pin From Net: NetName=GND Pin=SC4-1
+Removed Pin From Net: NetName=VCC Pin=SC5-1
+Removed Pin From Net: NetName=GND Pin=SC6-1
+Removed Pin From Net: NetName=VCC Pin=SC7-1
+Removed Pin From Net: NetName=GND Pin=SC8-1
+Removed Pin From Net: NetName=VCC Pin=SC9-1
+Removed Pin From Net: NetName=GND Pin=SC10-1
+Removed Pin From Net: NetName=VCC Pin=SC11-1
+Removed Pin From Net: NetName=GND Pin=SC12-1
+Removed Pin From Net: NetName=VCC Pin=SC13-1
+Removed Pin From Net: NetName=GND Pin=SC14-1
+Removed Pin From Net: NetName=VCC Pin=SC15-1
+Removed Pin From Net: NetName=GND Pin=SC16-1
+Removed Pin From Net: NetName=VCC Pin=SC17-1
+Removed Pin From Net: NetName=GND Pin=SC18-1
+Removed Pin From Net: NetName=VCC Pin=SC19-1
+Change Component Designator: OldDesignator=P4 NewDesignator=-
+Change Component Designator: OldDesignator=P5 NewDesignator=D
+Change Component Designator: OldDesignator=P6 NewDesignator=+
+Change Net Name : Old Net Name=NetP5_1 New Net Name=NetD_1
