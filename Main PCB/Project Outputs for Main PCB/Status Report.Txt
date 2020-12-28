@@ -1,28 +1,23 @@
+Source PCB Design Panelized.PcbDoc contains embedded board array. It is recomended to generate individual BOM for each embedded board PCB design.
+
 Output: Gerber Files
 Type  : Gerber
 From  : Variant [[No Variations]] of Project [Main PCB.PrjPCB]
-   Generated File[Main PCB.GTO]
-   Generated File[Main PCB.GTP]
-   Generated File[Main PCB.GTS]
-   Generated File[Main PCB.GTL]
-   Generated File[Main PCB.G1]
-   Generated File[Main PCB.G2]
-   Generated File[Main PCB.GBL]
-   Generated File[Main PCB.GBS]
-   Generated File[Main PCB.GBP]
-   Generated File[Main PCB.GBO]
-   Generated File[Main PCB.GM1]
-   Generated File[Main PCB.GM13]
-   Generated File[Main PCB.GM15]
-   Generated File[Main PCB.GKO]
-   Generated File[Main PCB.GPT]
-   Generated File[Main PCB.GPB]
-   Generated File[Main PCB.RUL]
-   Generated File[Main PCB.EXTREP]
-   Generated File[Main PCB.REP]
+   Generated File[Panelized.GTO]
+   Generated File[Panelized.GTS]
+   Generated File[Panelized.GTL]
+   Generated File[Panelized.G1]
+   Generated File[Panelized.G2]
+   Generated File[Panelized.GBL]
+   Generated File[Panelized.GBS]
+   Generated File[Panelized.GBO]
+   Generated File[Panelized.GM1]
+   Generated File[Panelized.RUL]
+   Generated File[Panelized.EXTREP]
+   Generated File[Panelized.REP]
 
 
-Files Generated   : 19
+Files Generated   : 12
 Documents Printed : 0
 
-Finished Output Generation At 11:36:50 PM On 12/25/2020
+Finished Output Generation At 9:59:40 PM On 12/27/2020
