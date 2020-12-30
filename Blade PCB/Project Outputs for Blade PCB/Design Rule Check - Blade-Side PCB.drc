@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Allen\Documents\GitHub\Lightsaber\Blade PCB\Blade-Side PCB.PcbDoc
-Date     : 12/27/2020
-Time     : 4:42:41 PM
+Date     : 12/28/2020
+Time     : 2:26:39 PM
 
 Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
 Rule Violations :0
@@ -56,4 +56,4 @@ Rule Violations :0
 
 Violations Detected : 2
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
