@@ -1,0 +1,5 @@
+GND
+TCK	1
+TMS	2
+TDI	4
+TDO	3
