@@ -9,30 +9,34 @@
 #include "inc/hw_gpio.h"
 #include "driverlib/debug.h"
 #include "driverlib/interrupt.h"
-#include "driverlib/pwm.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/pin_map.h"
+#include "driverlib/pwm.h"
 #include "driverlib/gpio.h"
 #include "driverlib/rom.h"
 #include "driverlib/rom_map.h"
 #include "drivers/buttons.h"
-#include "tm4c123gh6pm.h"
+#include "driverlib/timer.h"
 
 #include "pinConfig.h"
+#include "buttonLED.h"
+#include "timerHandler.h"
 
-//*****************************************************************************
-//
-// The error routine that is called if the driver library encounters an error.
-//
-//*****************************************************************************
-#ifdef DEBUG
-void
-__error__(char *pcFilename, uint32_t ui32Line)
-{
-}
+#ifdef DEBUG void __error__(char *pcFilename, uint32_t ui32Line) {}
 #endif
 
-void setup() {
+//  1000 Hz Button LED Handler
+void Timer0IntHandler(void) {
+    TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+    millisHandler();
+}
+
+void Timer1IntHandler(void) {
+    ROM_TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+}
+
+void setupPins() {
     // Setup the system clock to run at 50 Mhz from PLL with crystal reference
     SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 
@@ -80,53 +84,46 @@ void setup() {
 
 }
 
-void button_rgb(int redPercent, int greenPercent, int bluePercent, int brightnessPercent) {
-    int genPeriod = 10000;
+void setupInterrupts() {
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 
-    int redPeriod = (genPeriod / 100 / 100) * redPercent * brightnessPercent / 3;
-    int bluePeriod = (genPeriod / 100 / 100) * bluePercent * brightnessPercent / 3 + redPeriod;
-    int greenPeriod = genPeriod - ((genPeriod / 100 / 100) * greenPercent * brightnessPercent / 3);
+    IntMasterEnable();
 
-    if(redPeriod <= 0) redPeriod = 1;
-    if(redPeriod >= genPeriod) redPeriod = genPeriod - 1;
-    if(greenPeriod <= 0) greenPeriod = 1;
-    if(greenPeriod >= genPeriod) greenPeriod = genPeriod - 1;
-    if(bluePeriod <= 0) bluePeriod = 1;
-    if(bluePeriod >= genPeriod) bluePeriod = genPeriod - 1;
+    TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
+    TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
+    TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet() / 1000); // Button LED, 1000 Hz
+    TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());
 
-    PWMGenConfigure(PWM0_BASE, PWM_GEN_1, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
-    PWMGenConfigure(PWM0_BASE, PWM_GEN_2, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
-    PWMGenConfigure(PWM0_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
-    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, genPeriod);
-    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_2, genPeriod);
-    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, genPeriod);
+    IntEnable(INT_TIMER0A);
+    IntEnable(INT_TIMER1A);
+    TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+    TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
 
+    TimerEnable(TIMER0_BASE, TIMER_A);
+    TimerEnable(TIMER1_BASE, TIMER_A);
+}
 
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, redPeriod);
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, greenPeriod);
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, bluePeriod);
-
-//    PWM0_INVERT_R |= 0b1101000;
-    PWM0_INVERT_R |= 0b1001000;
-    PWMOutputInvert(PWM0_BASE, PWM_OUT_6 | PWM_OUT_5, true);
-    PWMOutputInvert(PWM0_BASE, PWM_OUT_3, false);
-
-    PWMGenEnable(PWM0_BASE, PWM_GEN_1);
-    PWMGenEnable(PWM0_BASE, PWM_GEN_2);
-    PWMGenEnable(PWM0_BASE, PWM_GEN_3);
-    PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT | PWM_OUT_5_BIT | PWM_OUT_6_BIT, true);
+long lastButtonLEDHandler = 0;
+void controlLoop() {
+    if(millis() - lastButtonLEDHandler >= 10) {
+        buttonLEDHandler();
+        lastButtonLEDHandler = millis();
+    }
 
 }
 
 int main(void) {
-    setup();
+    setupPins();
+    setupInterrupts();
 
     // Latch Power TODO - Delay
     GPIOPinWrite(PowerON_b, PowerON_p, PowerON_p);
 
-    button_rgb(100, 100, 100, 30);
+//    ButtonLED_setBlink(100,0,100,100, 100, 900);
+    ButtonLED_setPulse(100,0,100, 0, 100, 1000, 1000, 800, 700);
 
     while(1) {
-        SysCtlDelay(2000000);
+        controlLoop();
     }
 }
