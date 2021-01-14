@@ -20,7 +20,6 @@
 #include "timerHandler.h"
 #include "tm4c123gh6pm.h"
 
-
 #define BUTTON_LED_OFF -2
 #define BUTTON_LED_IDLE -1
 #define BUTTON_LED_SOLID 0

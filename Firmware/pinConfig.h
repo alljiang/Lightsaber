@@ -82,7 +82,7 @@
 // ****** LED ******
 
 #define Neopixel_b GPIO_PORTF_BASE
-#define Neopixel_p GPIO_PIN_0
+#define Neopixel_p GPIO_PIN_1
 
 #define LED_R_b GPIO_PORTD_BASE // PWM 6, Module 0 Generator 3
 #define LED_R_p GPIO_PIN_0
