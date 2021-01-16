@@ -8,6 +8,7 @@
 #include "inc/hw_ssi.h"
 #include "inc/hw_types.h"
 #include "inc/hw_gpio.h"
+#include "driverlib/adc.h"
 #include "driverlib/debug.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/sysctl.h"
@@ -79,6 +80,10 @@ void setupPins() {
     GPIOPinTypeGPIOOutput(CS_SD_b, CS_SD_p);
     GPIOPinTypeGPIOOutput(CS_DAC_b, CS_DAC_p);
 
+    // Configure ADC Pins
+    GPIOPinTypeADC(Vsense_b, Vsense_p);
+    GPIOPinTypeADC(Button_Sense_b, Button_Sense_p);
+
     // Initialize PWM
     SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
 
@@ -149,10 +154,60 @@ void Neopixel_sendData(uint32_t values[],int number) {
     GPIOPinWrite(Neopixel_b, Neopixel_p, 0);
 }
 
+// Return true if button pressed and false otherwise
+bool isButtonPressed(void) {
+    uint32_t ButtonSenseADC;
+    // Trigger the sample sequence.
+    ADCProcessorTrigger(ADC1_BASE, 0);
+    // Wait until the sample sequence has completed.
+    while(!ADCIntStatus(ADC1_BASE, 0, false)) {}
+    // Read the value from the ADC.
+    ADCSequenceDataGet(ADC1_BASE, 0, &ButtonSenseADC);
+    // ADC samples around 250 when button is pressed and close to 0 otherwise
+    if (ButtonSenseADC > 200)
+        return true;
+    else
+        return false;
+}
+
+// Return an int of the voltage of battery * 100
+int getBatteryVoltage(void) {
+    uint32_t VsenseADC;
+    // Trigger the sample sequence.
+    ADCProcessorTrigger(ADC0_BASE, 0);
+    // Wait until the sample sequence has completed.
+    while(!ADCIntStatus(ADC0_BASE, 0, false)) {}
+    // Read the value from the ADC.
+    ADCSequenceDataGet(ADC0_BASE, 0, &VsenseADC);
+    // Return sample data divided by 2^12 bit resolution multiplied by logical high multiplied by voltage divider then scaled up
+    return (double)VsenseADC / 4096 * 3.3 * 2 * 100;
+}
+
+// Initialize ADC modules for Vsense and Button sense
+void adcInit(void) {
+    // Initialize ADC0 module for Vsense, the battery voltage
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+    // Wait for module to be ready.
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC0)) {}
+    // Enable first sample sequencer to capture the value of channel 2 when processor trigger occurs
+    ADCSequenceConfigure(ADC0_BASE, 0, ADC_TRIGGER_PROCESSOR, 0);
+    ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_IE | ADC_CTL_END | ADC_CTL_CH2);
+    ADCSequenceEnable(ADC0_BASE, 0);
+
+    // Initialize ADC1 module for Button_sense, the button voltage
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
+    // Wait for module to be ready.
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC1)) {}
+    // Enable first sample sequencer to capture the value of channel 3 when processor trigger occurs
+    ADCSequenceConfigure(ADC1_BASE, 0, ADC_TRIGGER_PROCESSOR, 0);
+    ADCSequenceStepConfigure(ADC1_BASE, 0, 0, ADC_CTL_IE | ADC_CTL_END | ADC_CTL_CH3);
+    ADCSequenceEnable(ADC1_BASE, 0);
+}
 
 int main(void) {
     setupPins();
     setupInterrupts();
+    adcInit();
 
     // Latch Power TODO - Delay
     GPIOPinWrite(PowerON_b, PowerON_p, PowerON_p);
@@ -178,9 +233,6 @@ int main(void) {
     for(i = 0; i < 140; i++) {
         data[i] = grb;
     }
-
-
-
 
     while(1) {
         controlLoop();
