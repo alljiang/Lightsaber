@@ -21,10 +21,12 @@
 #include "driverlib/rom_map.h"
 #include "driverlib/systick.h"
 #include "driverlib/timer.h"
-#include "tm4c123gh6pm.h"
+
+#include "Button.h"
+#include "Neopixel.h"
+#include "Power.h"
 
 #include "pinConfig.h"
-#include "buttonLED.h"
 #include "timerHandler.h"
 
 //  1000 Hz Button LED Handler
@@ -36,6 +38,8 @@ void Timer0IntHandler(void) {
 
 void Timer1IntHandler(void) {
     TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+
+    Neopixel_setSolid(0, 100, 0);
 }
 
 bool a = false;
@@ -70,36 +74,12 @@ void setupPins() {
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF)) {}
 
     // Configure GPIO Pins
-    GPIOPinTypeGPIOOutput(PowerON_b, PowerON_p);
-    GPIOPinTypeGPIOOutput(Charge_Bias_b, Charge_Bias_p);
-    GPIOPinTypeGPIOInput(Not_Charging_b, Not_Charging_p);
     GPIOPinTypeGPIOOutput(ESP_IO0_b, ESP_IO0_p);
     GPIOPinTypeGPIOOutput(ESP_IO2_b, ESP_IO2_p);
     GPIOPinTypeGPIOOutput(ESP_EN_b, ESP_EN_p);
     GPIOPinTypeGPIOOutput(ESP_RST_b, ESP_RST_p);
     GPIOPinTypeGPIOOutput(CS_SD_b, CS_SD_p);
     GPIOPinTypeGPIOOutput(CS_DAC_b, CS_DAC_p);
-
-    // Configure ADC Pins
-    GPIOPinTypeADC(Vsense_b, Vsense_p);
-    GPIOPinTypeADC(Button_Sense_b, Button_Sense_p);
-
-    // Initialize PWM
-    SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
-
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_PWM0)) {}
-
-    // Configure PWM Pins
-    GPIOPinConfigure(GPIO_PE5_M0PWM5);
-    GPIOPinTypePWM(LED_G_b, LED_G_p);
-
-    GPIOPinConfigure(GPIO_PD0_M0PWM6);
-    GPIOPinTypePWM(LED_R_b, LED_R_p);
-
-    GPIOPinTypePWM(LED_Anode_b, LED_Anode_p);
-    GPIOPinConfigure(GPIO_PB5_M0PWM3);
-
 }
 
 void setupInterrupts() {
@@ -118,7 +98,7 @@ void setupInterrupts() {
     TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
     TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
     TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet() / 1000); // 1000 Hz
-    TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());
+    TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet() / 20);  //  20 Hz
 
     IntEnable(INT_TIMER0A);
     IntEnable(INT_TIMER1A);
@@ -129,114 +109,34 @@ void setupInterrupts() {
     TimerEnable(TIMER1_BASE, TIMER_A);
 }
 
-long lastButtonLEDHandler = 0;
+long last_ButtonHandler = 0;
+
 void controlLoop() {
-    if(millis() - lastButtonLEDHandler >= 10) {
-        buttonLEDHandler();
-        lastButtonLEDHandler = millis();
+    if(millis() - last_ButtonHandler >= 10) {
+        Button_Handler();
+        last_ButtonHandler = millis();
     }
-}
-
-uint32_t data[144];
-
-void Neopixel_sendData(uint32_t values[],int number) {
-    GPIOPinConfigure(GPIO_PF1_SSI1TX);
-    GPIOPinTypeSSI(Neopixel_b, Neopixel_p);
-    int k, i;
-    for(k = 0; k < number; k++) {
-        for(i=23; i >= 0; i--) {
-            volatile uint8_t convert = 0xC0 ;//0b11000000;
-            if((values[k] >> i) & 0x1 != 0) convert = 0xF8;// 0b11111000;
-            SSIDataPut(SSI1_BASE, convert);
-        }
-    }
-    GPIOPinTypeGPIOOutput(Neopixel_b, Neopixel_p);
-    GPIOPinWrite(Neopixel_b, Neopixel_p, 0);
-}
-
-// Return true if button pressed and false otherwise
-bool isButtonPressed(void) {
-    uint32_t ButtonSenseADC;
-    // Trigger the sample sequence.
-    ADCProcessorTrigger(ADC1_BASE, 0);
-    // Wait until the sample sequence has completed.
-    while(!ADCIntStatus(ADC1_BASE, 0, false)) {}
-    // Read the value from the ADC.
-    ADCSequenceDataGet(ADC1_BASE, 0, &ButtonSenseADC);
-    // ADC samples around 250 when button is pressed and close to 0 otherwise
-    if (ButtonSenseADC > 200)
-        return true;
-    else
-        return false;
-}
-
-// Return an int of the voltage of battery * 100
-int getBatteryVoltage(void) {
-    uint32_t VsenseADC;
-    // Trigger the sample sequence.
-    ADCProcessorTrigger(ADC0_BASE, 0);
-    // Wait until the sample sequence has completed.
-    while(!ADCIntStatus(ADC0_BASE, 0, false)) {}
-    // Read the value from the ADC.
-    ADCSequenceDataGet(ADC0_BASE, 0, &VsenseADC);
-    // Return sample data divided by 2^12 bit resolution multiplied by logical high multiplied by voltage divider then scaled up
-    return (double)VsenseADC / 4096 * 3.3 * 2 * 100;
-}
-
-// Initialize ADC modules for Vsense and Button sense
-void adcInit(void) {
-    // Initialize ADC0 module for Vsense, the battery voltage
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
-    // Wait for module to be ready.
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC0)) {}
-    // Enable first sample sequencer to capture the value of channel 2 when processor trigger occurs
-    ADCSequenceConfigure(ADC0_BASE, 0, ADC_TRIGGER_PROCESSOR, 0);
-    ADCSequenceStepConfigure(ADC0_BASE, 0, 0, ADC_CTL_IE | ADC_CTL_END | ADC_CTL_CH2);
-    ADCSequenceEnable(ADC0_BASE, 0);
-
-    // Initialize ADC1 module for Button_sense, the button voltage
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
-    // Wait for module to be ready.
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC1)) {}
-    // Enable first sample sequencer to capture the value of channel 3 when processor trigger occurs
-    ADCSequenceConfigure(ADC1_BASE, 0, ADC_TRIGGER_PROCESSOR, 0);
-    ADCSequenceStepConfigure(ADC1_BASE, 0, 0, ADC_CTL_IE | ADC_CTL_END | ADC_CTL_CH3);
-    ADCSequenceEnable(ADC1_BASE, 0);
 }
 
 int main(void) {
     setupPins();
     setupInterrupts();
-    adcInit();
+
+    Power_initialize();
+    Button_initialize();
+    Neopixel_initialize();
 
     // Latch Power TODO - Delay
-    GPIOPinWrite(PowerON_b, PowerON_p, PowerON_p);
+    Power_latchOn();
 
-    ButtonLED_setSolid(100,100,100,100);
-//    ButtonLED_setBlink(100,100,100,100, 100, 900);
-//    ButtonLED_setPulse(0,40,80, 0, 100, 1000, 1000, 800, 700);
+    Button_setSolid(100,100,100,100);
+//    Button_setBlink(100,100,100,100, 100, 900);
+//    Button_setPulse(0,40,80, 0, 100, 1000, 1000, 800, 700);
 
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_SSI1)) {}
 
-    GPIOPinConfigure(GPIO_PF1_SSI1TX);
-
-    GPIOPinTypeSSI(Neopixel_b, Neopixel_p);
-    SSIIntClear(SSI1_BASE,SSI_TXEOT);
-    SSIConfigSetExpClk(SSI1_BASE, 80000000, SSI_FRF_MOTO_MODE_0,SSI_MODE_MASTER, 6400000, 8);
-    SSIEnable(SSI1_BASE);
-
-//    uint32_t grb = 0b000000001111111111111111;
-//    uint32_t grb = 0b000000001111111100000000;
-    uint32_t grb = 0b000000000000000011111111;
-    int i;
-    for(i = 0; i < 140; i++) {
-        data[i] = grb;
-    }
 
     while(1) {
         controlLoop();
-        Neopixel_sendData(data, 140);
 
         SysCtlDelay(2000000);
     }

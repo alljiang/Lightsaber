@@ -15,10 +15,12 @@
 #include "driverlib/gpio.h"
 #include "driverlib/rom.h"
 #include "driverlib/rom_map.h"
-//#include "drivers/buttons.h"
+#include "driverlib/adc.h"
 #include "driverlib/timer.h"
 #include "timerHandler.h"
 #include "tm4c123gh6pm.h"
+
+#include "pinConfig.h"
 
 #define BUTTON_LED_OFF -2
 #define BUTTON_LED_IDLE -1
@@ -57,7 +59,39 @@ long blink_lastToggleMillis = 0;
 int pulse_state = 0;
 long pulse_lastStateMillis = 0;
 
-void button_rgb(int redPercent, int greenPercent, int bluePercent, int brightnessPercent) {
+void Button_initialize() {
+    // Configure ADC Pins
+    GPIOPinTypeADC(Vsense_b, Vsense_p);
+    GPIOPinTypeADC(Button_Sense_b, Button_Sense_p);
+
+    // Initialize PWM
+    SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_PWM0)) {}
+
+    // Configure PWM Pins
+    GPIOPinConfigure(GPIO_PE5_M0PWM5);
+    GPIOPinTypePWM(LED_G_b, LED_G_p);
+
+    GPIOPinConfigure(GPIO_PD0_M0PWM6);
+    GPIOPinTypePWM(LED_R_b, LED_R_p);
+
+    GPIOPinTypePWM(LED_Anode_b, LED_Anode_p);
+    GPIOPinConfigure(GPIO_PB5_M0PWM3);
+
+    // Initialize ADC1 module for Button_sense, the button voltage
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
+    // Wait for module to be ready.
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC1)) {}
+    // Enable first sample sequencer to capture the value of channel 3 when processor trigger occurs
+    ADCSequenceConfigure(ADC1_BASE, 0, ADC_TRIGGER_PROCESSOR, 0);
+    ADCSequenceStepConfigure(ADC1_BASE, 0, 0, ADC_CTL_IE | ADC_CTL_END | ADC_CTL_CH3);
+    ADCSequenceEnable(ADC1_BASE, 0);
+
+}
+
+void Button_rgb(int redPercent, int greenPercent, int bluePercent, int brightnessPercent) {
     int genPeriod = 10000;
 
     int redPeriod = (genPeriod / 100 / 100) * redPercent * brightnessPercent / 3;
@@ -92,7 +126,7 @@ void button_rgb(int redPercent, int greenPercent, int bluePercent, int brightnes
     PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT | PWM_OUT_5_BIT | PWM_OUT_6_BIT, true);
 }
 
-void ButtonLED_setSolid(int r, int g, int b, int alpha) {
+void Button_setSolid(int r, int g, int b, int alpha) {
     CONFIG_BUTTON_LED_MODE = BUTTON_LED_SOLID;
 
     CONFIG_BUTTON_LED_SOLID_R = r;
@@ -101,7 +135,7 @@ void ButtonLED_setSolid(int r, int g, int b, int alpha) {
     CONFIG_BUTTON_LED_SOLID_A = alpha;
 }
 
-void ButtonLED_setBlink(int r, int g, int b, int alpha, int onPeriod, int offPeriod) {
+void Button_setBlink(int r, int g, int b, int alpha, int onPeriod, int offPeriod) {
     CONFIG_BUTTON_LED_MODE = BUTTON_LED_BLINK;
 
     CONFIG_BUTTON_LED_BLINK_R = r;
@@ -115,7 +149,7 @@ void ButtonLED_setBlink(int r, int g, int b, int alpha, int onPeriod, int offPer
     blink_lastToggleMillis = 0;
 }
 
-void ButtonLED_setPulse(int r, int g, int b, int lowAlpha, int highAlpha, int rampUpPeriod, int topPeriod, int rampDownPeriod, int bottomPeriod) {
+void Button_setPulse(int r, int g, int b, int lowAlpha, int highAlpha, int rampUpPeriod, int topPeriod, int rampDownPeriod, int bottomPeriod) {
     CONFIG_BUTTON_LED_MODE = BUTTON_LED_PULSE;
 
     CONFIG_BUTTON_LED_PULSE_R = r;
@@ -132,29 +166,29 @@ void ButtonLED_setPulse(int r, int g, int b, int lowAlpha, int highAlpha, int ra
     pulse_lastStateMillis = millis();
 }
 
-void buttonLEDHandler() {
+void Button_Handler() {
 
     if(CONFIG_BUTTON_LED_MODE == BUTTON_LED_IDLE) {}
     else if(CONFIG_BUTTON_LED_MODE == BUTTON_LED_OFF) {
-        button_rgb(0,0,0,0);
+        Button_rgb(0,0,0,0);
         CONFIG_BUTTON_LED_MODE = BUTTON_LED_IDLE;
     }
     else if(CONFIG_BUTTON_LED_MODE == BUTTON_LED_SOLID) {
-        button_rgb(CONFIG_BUTTON_LED_SOLID_R, CONFIG_BUTTON_LED_SOLID_G, CONFIG_BUTTON_LED_SOLID_B, CONFIG_BUTTON_LED_SOLID_A);
+        Button_rgb(CONFIG_BUTTON_LED_SOLID_R, CONFIG_BUTTON_LED_SOLID_G, CONFIG_BUTTON_LED_SOLID_B, CONFIG_BUTTON_LED_SOLID_A);
         CONFIG_BUTTON_LED_MODE = BUTTON_LED_IDLE;
     }
     else if(CONFIG_BUTTON_LED_MODE == BUTTON_LED_BLINK) {
         if(blink_isOn) {
             if(millis() - blink_lastToggleMillis >= CONFIG_BUTTON_LED_BLINK_ONPERIOD) {
                 //  turn off
-                button_rgb(0,0,0,0);
+                Button_rgb(0,0,0,0);
                 blink_lastToggleMillis = millis();
                 blink_isOn = false;
             }
         } else {
             if(millis() - blink_lastToggleMillis >= CONFIG_BUTTON_LED_BLINK_OFFPERIOD) {
                 //  turn on
-                button_rgb(CONFIG_BUTTON_LED_BLINK_R, CONFIG_BUTTON_LED_BLINK_G, CONFIG_BUTTON_LED_BLINK_B, CONFIG_BUTTON_LED_BLINK_A);
+                Button_rgb(CONFIG_BUTTON_LED_BLINK_R, CONFIG_BUTTON_LED_BLINK_G, CONFIG_BUTTON_LED_BLINK_B, CONFIG_BUTTON_LED_BLINK_A);
                 blink_lastToggleMillis = millis();
                 blink_isOn = true;
             }
@@ -168,7 +202,7 @@ void buttonLEDHandler() {
                 pulse_lastStateMillis = millis();
             }
             else {
-                button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B, CONFIG_BUTTON_LED_PULSE_LOWALPHA);
+                Button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B, CONFIG_BUTTON_LED_PULSE_LOWALPHA);
             }
         }
         if(pulse_state == 1) {
@@ -179,7 +213,7 @@ void buttonLEDHandler() {
             }
             else {
                 uint8_t alpha = (CONFIG_BUTTON_LED_PULSE_HIGHALPHA - CONFIG_BUTTON_LED_PULSE_LOWALPHA) * (millis() - pulse_lastStateMillis) / CONFIG_BUTTON_LED_PULSE_RAMPUPPERIOD + CONFIG_BUTTON_LED_PULSE_LOWALPHA;
-                button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B,  alpha);
+                Button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B,  alpha);
             }
         }
         if(pulse_state == 2) {
@@ -189,7 +223,7 @@ void buttonLEDHandler() {
                 pulse_lastStateMillis = millis();
             }
             else {
-                button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B, CONFIG_BUTTON_LED_PULSE_HIGHALPHA);
+                Button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B, CONFIG_BUTTON_LED_PULSE_HIGHALPHA);
             }
         }
         if(pulse_state == 3) {
@@ -200,7 +234,7 @@ void buttonLEDHandler() {
             }
             else {
                 uint8_t alpha = CONFIG_BUTTON_LED_PULSE_HIGHALPHA - (CONFIG_BUTTON_LED_PULSE_HIGHALPHA - CONFIG_BUTTON_LED_PULSE_LOWALPHA) * (millis() - pulse_lastStateMillis) / CONFIG_BUTTON_LED_PULSE_RAMPDOWNPERIOD;
-                button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B,  alpha);
+                Button_rgb(CONFIG_BUTTON_LED_PULSE_R, CONFIG_BUTTON_LED_PULSE_G, CONFIG_BUTTON_LED_PULSE_B,  alpha);
             }
         }
     }
@@ -208,4 +242,20 @@ void buttonLEDHandler() {
 
     }
 
+}
+
+// Return true if button pressed and false otherwise
+int Button_isPressed(void) {
+    uint32_t ButtonSenseADC;
+    // Trigger the sample sequence.
+    ADCProcessorTrigger(ADC1_BASE, 0);
+    // Wait until the sample sequence has completed.
+    while(!ADCIntStatus(ADC1_BASE, 0, 0)) {}
+    // Read the value from the ADC.
+    ADCSequenceDataGet(ADC1_BASE, 0, &ButtonSenseADC);
+    // ADC samples around 250 when button is pressed and close to 0 otherwise
+    if (ButtonSenseADC > 200)
+        return 1;
+    else
+        return 0;
 }
