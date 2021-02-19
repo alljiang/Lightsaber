@@ -24,11 +24,10 @@
 #include "driverlib/timer.h"
 
 #include "pinConfig.h"
-
-#define Number_of_LEDs 130
+#include "Neopixel.h"
 
 // LED Colors, 24-bit color: GGGGGGGG RRRRRRRR BBBBBBBB
-uint32_t data[Number_of_LEDs];
+uint32_t data[NEOPIXEL_COUNT];
 
 void Neopixel_initialize() {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);

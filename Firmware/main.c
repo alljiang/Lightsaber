@@ -29,6 +29,12 @@
 #include "pinConfig.h"
 #include "timerHandler.h"
 
+uint32_t allWhite[NEOPIXEL_COUNT];
+uint32_t allOff[NEOPIXEL_COUNT];
+bool powerOn;
+bool lastButtonState;
+bool neopixelState;
+
 //  1000 Hz Button LED Handler
 void Timer0IntHandler(void) {
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
@@ -38,21 +44,9 @@ void Timer0IntHandler(void) {
 
 void Timer1IntHandler(void) {
     TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
-
-    Neopixel_setSolid(0, 100, 0);
 }
 
-bool a = false;
 void SysTickIntHandler(void) {
-    if(a) {
-        GPIOPinWrite(ESP_IO0_b, ESP_IO0_p, ESP_IO0_p);
-        GPIOPinWrite(ESP_IO2_b, ESP_IO2_p, ESP_IO2_p);
-        a = false;
-    } else {
-        GPIOPinWrite(ESP_IO0_b, ESP_IO0_p, 0);
-        GPIOPinWrite(ESP_IO2_b, ESP_IO2_p, 0);
-        a = true;
-    }
 }
 
 void setupPins() {
@@ -109,35 +103,86 @@ void setupInterrupts() {
     TimerEnable(TIMER1_BASE, TIMER_A);
 }
 
-long last_ButtonHandler = 0;
+long last_ButtonLEDHandler = 0;
+long last_ButtonPressHandler = 0;
+long last_NeopixelHandler = 0;
+long last_VoltageHandler = 0;
 
 void controlLoop() {
-    if(millis() - last_ButtonHandler >= 10) {
+    long time = millis();
+
+    if(time - last_ButtonLEDHandler >= 10) {
+        last_ButtonLEDHandler = time;
         Button_Handler();
-        last_ButtonHandler = millis();
+    }
+
+    if(time - last_ButtonPressHandler >= 300) {
+        last_ButtonPressHandler = time;
+
+        bool buttonState = Button_isPressed();
+        if(buttonState && !lastButtonState) {
+            powerOn = !powerOn;
+        }
+        lastButtonState = buttonState;
+    }
+
+//    if(time - last_VoltageHandler >= 1000) {
+//        last_VoltageHandler = time;
+//
+//        int x = Power_getBatteryVoltage();
+//        if(x < 100) {
+//            Power_latchOff();
+//        }
+//    }
+
+    if(time - last_NeopixelHandler >= 50) {
+        last_NeopixelHandler = time;
+
+        if(powerOn) {
+            if(neopixelState == 0) {
+                neopixelState = 1;
+                Neopixel_sendData(allWhite, NEOPIXEL_COUNT);
+            } else if(neopixelState == 1) {
+                neopixelState = 0;
+                Neopixel_sendData(allWhite, NEOPIXEL_COUNT);
+
+            }
+        } else {
+            neopixelState = 0;
+            Neopixel_sendData(allOff, NEOPIXEL_COUNT);
+        }
     }
 }
 
 int main(void) {
+    int i;
+
     setupPins();
-    setupInterrupts();
 
     Power_initialize();
     Button_initialize();
     Neopixel_initialize();
 
+    setupInterrupts();
+
     // Latch Power TODO - Delay
     Power_latchOn();
 
-    Button_setSolid(100,100,100,100);
+//    Button_setSolid(100,100,100,100);
 //    Button_setBlink(100,100,100,100, 100, 900);
 //    Button_setPulse(0,40,80, 0, 100, 1000, 1000, 800, 700);
+    Button_setPulse(100,100,100, 0, 50, 1000, 1000, 800, 700);
 
-
+    lastButtonState = false;
+    neopixelState = false;
+    for(i = 0 ; i < NEOPIXEL_COUNT; i++) {
+        allWhite[i] = 0b111111111111111111111111;
+        allOff[i]   = 0b000000000000000000000000;
+    }
 
     while(1) {
         controlLoop();
 
-        SysCtlDelay(2000000);
+//        SysCtlDelay(2000000);
     }
 }
