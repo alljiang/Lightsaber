@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="nyan_wave_data" version="1.3.0" audacityversion="2.4.2" sel0="25.7741496599" sel1="25.7741496599" vpos="0" h="0.0000000000" zoom="21.5332031250" rate="8000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="nyan_wave" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1193508">
+				<waveblock start="0">
+					<simpleblockfile filename="e08081eb.au" len="262127" min="-0.994751" max="0.995667" rms="0.25768"/>
+				</waveblock>
+				<waveblock start="262127">
+					<simpleblockfile filename="e08084f1.au" len="262144" min="-0.775177" max="0.856323" rms="0.213648"/>
+				</waveblock>
+				<waveblock start="524271">
+					<simpleblockfile filename="e080833d.au" len="262144" min="-0.698303" max="0.702362" rms="0.21029"/>
+				</waveblock>
+				<waveblock start="786415">
+					<simpleblockfile filename="e0808563.au" len="262144" min="-0.715271" max="0.739502" rms="0.208104"/>
+				</waveblock>
+				<waveblock start="1048559">
+					<simpleblockfile filename="e0808c60.au" len="144949" min="-0.711212" max="0.703857" rms="0.211632"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

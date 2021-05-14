@@ -21,7 +21,7 @@
 #define Button_Sense_b GPIO_PORTE_BASE
 #define Button_Sense_p GPIO_PIN_0
 
-#define Charge_Bias_b GPIO_PORTE_BASE
+#define Charge_Bias_b GPIO_PORTD_BASE
 #define Charge_Bias_p GPIO_PIN_7
 
 #define Not_Charging_b GPIO_PORTC_BASE
@@ -31,6 +31,7 @@
 
 // ****** ESP ******
 
+//#define ESP_IO0_b GPIO_PORTE_BASE
 #define ESP_IO0_b GPIO_PORTA_BASE
 #define ESP_IO0_p GPIO_PIN_1
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    The order of these items must match the order in the TM4C    -->
+    <string-array name="bladeEffects">
+        <item>Solid</item>
+        <item>Unstable</item>
+        <item>Electric</item>
+        <item>Flame</item>
+        <item>Energetic</item>
+        <item>Rainbow</item>
+        <item>Rainbow Pulse</item>
+        <item>Rainbow Strobe</item>
+    </string-array>
+
+</resources>

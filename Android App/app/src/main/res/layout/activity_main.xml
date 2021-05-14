@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#222222"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp"></TextView>
+
+    <TextView
+        android:id="@+id/textViewSR"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarSG"
+        app:layout_constraintStart_toStartOf="@+id/textViewPR"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSR" />
+
+    <TextView
+        android:id="@+id/textViewSG"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarSB"
+        app:layout_constraintStart_toStartOf="@+id/textViewPR"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSG" />
+
+    <TextView
+        android:id="@+id/textViewPB"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarPB"
+        app:layout_constraintStart_toStartOf="@+id/textViewPR"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPB" />
+
+    <TextView
+        android:id="@+id/textViewSB"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarSB"
+        app:layout_constraintStart_toStartOf="@+id/textViewPR"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSB" />
+
+    <TextView
+        android:id="@+id/textViewPR"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarPR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/seekBarPG"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPR" />
+
+    <SeekBar
+        android:id="@+id/seekBarSB"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="#0000CC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSG" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Secondary Color"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrimaryColor" />
+
+    <SeekBar
+        android:id="@+id/seekBarSG"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="#00CC00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSR" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarSR"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSR" />
+
+    <SeekBar
+        android:id="@+id/seekBarSR"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/seekBarSG"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:text="G"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarSG"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSG" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarSB"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/seekBarSB" />
+
+    <SeekBar
+        android:id="@+id/seekBarPB"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="#0000CC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPG" />
+
+    <SeekBar
+        android:id="@+id/seekBarPG"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="#00CC00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPR" />
+
+    <SeekBar
+        android:id="@+id/seekBarPR"
+        android:layout_width="325dp"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Primary Color"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarPG"
+        app:layout_constraintEnd_toStartOf="@+id/seekBarPR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPR" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarPG"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPG" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarPB"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPB" />
+
+    <Switch
+        android:id="@+id/soundSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="false"
+        android:thumbTint="@color/teal_200"
+        android:trackTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSecondaryColor"
+        tools:checked="false" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Classic Sound Font"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/soundSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/soundSwitch"
+        app:layout_constraintTop_toTopOf="@+id/soundSwitch" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Alternative Sound Font"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/soundSwitch"
+        app:layout_constraintStart_toEndOf="@+id/soundSwitch"
+        app:layout_constraintTop_toTopOf="@+id/soundSwitch" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/spinner_border"
+        android:entries="@array/bladeEffects"
+        android:popupBackground="#444444"
+        android:theme="@style/mySpinnerItemStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Blade Effect"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soundSwitch" />
+
+    <TextView
+        android:id="@+id/textViewPG"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarPB"
+        app:layout_constraintStart_toStartOf="@+id/textViewPR"
+        app:layout_constraintTop_toTopOf="@+id/seekBarPG" />
+
+    <TextView
+        android:id="@+id/textViewPrimaryColor"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPB" />
+
+    <TextView
+        android:id="@+id/textViewSecondaryColor"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSB" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAutoApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Automatically Apply Settings"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonApply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Apply"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnect"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLoad"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxAutoApply" />
+
+    <Button
+        android:id="@+id/buttonLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Load"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonApply"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Connect"
+        app:layout_constraintBottom_toBottomOf="@+id/textView23"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connection Status"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonConnect"
+        app:layout_constraintEnd_toStartOf="@+id/buttonConnect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonConnect"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/textViewConnectionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Connected"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Battery Voltage"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonApply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewVoltage"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="0.00 V"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textViewTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00.0 ºC"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
