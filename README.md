@@ -43,7 +43,7 @@ Team Members: Allen Jiang, Sophia Jiang, Adeel Rehman, Sharon Chen <br />
     * Blade connector mounted using screws and hot-melt insert
     * RGB button connected with ribbon cable
 <br />
-<br />
   <b>Video Link:</b>
 <br />
+
 [![Alt text](https://img.youtube.com/vi/Yrs18WD5HyQ/0.jpg)](https://www.youtube.com/watch?v=Yrs18WD5HyQ)
