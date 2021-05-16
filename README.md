@@ -1,7 +1,7 @@
 # Lightsaber
 
 EE445L Embedded Systems Lab with Dr. Valvano <br />
-Final Project <br />
+Final Project, 1st place in class design competition <br />
 Spring 2021 <br />
 Team Members: Allen Jiang, Sophia Jiang, Adeel Rehman, Sharon Chen <br />
 <br />
