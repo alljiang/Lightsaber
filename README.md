@@ -3,6 +3,7 @@
 EE445L Embedded Systems Lab with Dr. Valvano <br />
 Final Project <br />
 Spring 2021 <br />
+Team Members: Allen Jiang, Sophia Jiang, Adeel Rehman, Sharon Chen <br />
 <br />
 <b>Features:</b> <br />
 * Circuit Board
